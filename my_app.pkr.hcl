@@ -25,7 +25,7 @@ provisioner "shell" {
   
   inline = [
     "sleep 30",
-    Sudo su,
+    "Sudo su",
     "sudo apt-get update && apt-get upgrade -y",
     "sudo apt-get update -y",
     "sudo apt-get install tomcat9-admin tomcat9-common -y",
