@@ -24,6 +24,7 @@ build {
     inline = [
       "sleep 30",
       "sudo su",
+      "cd",
       "sudo apt-get update && apt-get upgrade -y",
       "sudo apt-get update -y",
       "sudo apt-get install tomcat9-admin tomcat9-common -y",
