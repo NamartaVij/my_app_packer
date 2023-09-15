@@ -21,11 +21,12 @@ build {
     "source.amazon-ebs.my_packer_image"
   ]
 }
+
 provisioner "shell" {
   
   inline = [
     "sleep 30",
-    "Sudo su",
+    "sudo su",
     "sudo apt-get update && apt-get upgrade -y",
     "sudo apt-get update -y",
     "sudo apt-get install tomcat9-admin tomcat9-common -y",
