@@ -12,7 +12,7 @@ source "amazon-ebs" "my_packer_image" {
   instance_type = "t2.micro"
   region        = "us-east-2"
   source_ami    = "ami-024e6efaf93d85776"
-  ssh_username = "ubuntu"
+  ssh_username  = "ubuntu"
 }
 
 build {
