@@ -10,7 +10,7 @@ packer {
 source "amazon-ebs" "my_packer_image" {
   ami_name      = "my_packer_image"
   instance_type = "t2.micro"
-  region        = "us-west-2"
+  region        = "us-east-2"
   source_ami    = "ami-024e6efaf93d85776"
   ssh_username = "ubuntu"
 }
@@ -26,8 +26,8 @@ provisioner "shell" {
   inline = [
     "sleep 30",
     Sudo su,
-    "sudo apt-get update && apt-get upgrade -y",
     "sudo apt-get update -y",
+    "sudo apt-get upgrade -y",
     "sudo apt-get install tomcat9-admin tomcat9-common -y",
     "sudo apt-get install tomcat9 -y"
     "cd /var/lib/tomcat9/webapps/"
