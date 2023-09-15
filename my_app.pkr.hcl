@@ -20,18 +20,17 @@ build {
   sources = [
     "source.amazon-ebs.my_packer_image"
   ]
-}
-
-provisioner "shell" {
-  
-  inline = [
-    "sleep 30",
-    "sudo apt-get update && apt-get upgrade -y",
-    "sudo apt-get update -y",
-    "sudo apt-get install tomcat9-admin tomcat9-common -y",
-    "sudo apt-get install tomcat9 -y",
-    "cd /var/lib/tomcat9/webapps/",
-    "sudo wget https://mybucket-namu.s3.us-east-2.amazonaws.com/myapp.war",
-    "sudo systemctl start tomcat9"
-  ]
+  provisioner "shell" {
+    inline = [
+      "sleep 30",
+      "sudo su",
+      "sudo apt-get update && apt-get upgrade -y",
+      "sudo apt-get update -y",
+      "sudo apt-get install tomcat9-admin tomcat9-common -y",
+      "sudo apt-get install tomcat9 -y",
+      "cd /var/lib/tomcat9/webapps/",
+      "sudo wget https://mybucket-namu.s3.us-east-2.amazonaws.com/myapp.war",
+      "sudo systemctl start tomcat9"
+    ]
+  }
 }
